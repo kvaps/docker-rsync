@@ -12,6 +12,6 @@ RUN apk --no-cache add gcc build-base perl git \
  && make \
  && make install
 
-FROM builder
+FROM alpine
 COPY --from=builder /usr/local/bin/rsync /usr/local/bin/rsync
 ENTRYPOINT [ "/usr/local/bin/rsync" ]
